@@ -12,10 +12,7 @@ const Config = require('../config');
 
 const Language = require('../language');
 const Lang = Language.getString('memes');
-
-//- json keys
-const up = require('./data/settings.json');
-const made = up.by;
+const MLang = Language.getString('messages');
 
 if (Config.WORKTYPE == 'private') {
 
@@ -49,7 +46,7 @@ if (Config.WORKTYPE == 'private') {
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('dbxmeme.png'), MessageType.image, {filename: 'dbxmeme.png', mimetype: Mimetype.png, caption: `${made}`});
+            await message.client.sendMessage(message.jid, fs.readFileSync('dbxmeme.png'), MessageType.image, {filename: 'dbxmeme.png', mimetype: Mimetype.png, caption: `${MLang.by}`});
             await info.delete();
         });
     }));
@@ -86,7 +83,7 @@ else if (Config.WORKTYPE == 'public') {
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('dbxmeme.png'), MessageType.image, {filename: 'dbxmeme.png', mimetype: Mimetype.png, caption: `${made}`});
+            await message.client.sendMessage(message.jid, fs.readFileSync('dbxmeme.png'), MessageType.image, {filename: 'dbxmeme.png', mimetype: Mimetype.png, caption: `${MLang.by}`});
             await info.delete();
         });
     }));

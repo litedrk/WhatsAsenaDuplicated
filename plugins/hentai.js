@@ -10,13 +10,12 @@ const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const { errorMessage, infoMessage } = require('../helpers');
 const Config = require('../config');
 
-//- json keys
-const up = require('./data/settings.json');
-const made = up.by;
-
 const H_DESC = "Menú de descarga de imagenes anime."
 const Ierr = "¡Parece que hay un error!"
 const aniN = "¡waifu o neko!"
+
+const Language = require('../language');
+const MLang = Language.getString('messages');
 
 if (Config.WORKTYPE == 'private') {
 
@@ -26,7 +25,7 @@ if (Config.WORKTYPE == 'private') {
 
 	DrkBox.addCommand({pattern: 'calendar', fromMe: true}, (async (message, match) => {
 		var image = await axios.get ('https://raw.githubusercontent.com/BotPrivateDrk/WhatsAsenaDuplicated/master/media/gif/calender.jpg', {responseType: 'arraybuffer'})
-		await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.jpg, caption: `${made}` })
+		await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.jpg, caption: `${MLang.by}` })
 	}));
 	
 	DrkBox.addCommand({pattern: "sfw ?(.*)", fromMe: true}, (async (message, match) => {
@@ -42,7 +41,7 @@ if (Config.WORKTYPE == 'private') {
 				await axios.get(`https://api.waifu.pics/sfw/waifu`).then(async (response) => {
 					const {url} = response.data
 					const amin = await axios.get(url, { responseType: 'arraybuffer' })
-					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${made}` })
+					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${MLang.by}` })
 				});
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)
@@ -53,7 +52,7 @@ if (Config.WORKTYPE == 'private') {
 				await axios.get(`https://api.waifu.pics/sfw/neko`).then(async (response) => {
 					const {url} = response.data
 					const amin = await axios.get(url, { responseType: 'arraybuffer' })
-					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${made}` })
+					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${MLang.by}` })
 				});
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)
@@ -74,7 +73,7 @@ if (Config.WORKTYPE == 'private') {
 				await axios.get(`https://api.waifu.pics/nsfw/waifu`).then(async (response) => {
 					const {url} = response.data
 					const amin = await axios.get(url, { responseType: 'arraybuffer' })
-					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${made}` })
+					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${MLang.by}` })
 				});
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)
@@ -85,7 +84,7 @@ if (Config.WORKTYPE == 'private') {
 				await axios.get(`https://api.waifu.pics/nsfw/neko`).then(async (response) => {
 					const {url} = response.data
 					const amin = await axios.get(url, { responseType: 'arraybuffer' })
-					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${made}` })
+					await message.sendMessage(Buffer.from(amin.data), MessageType.image, { caption: `${MLang.by}` })
 				});
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)

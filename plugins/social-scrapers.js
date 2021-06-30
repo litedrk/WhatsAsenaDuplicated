@@ -11,16 +11,11 @@ const Config = require('../config');
 const axios = require('axios');
 const fs = require('fs');
 
-//- json & keys
-const up = require('./data/settings.json');
-const melodickey = up.Keymelodic;
-const xteamkey = up.Keyxteam;
-const made = up.by;
-const zeks = up.Keyzeks
-
 const Language = require('../language');
 const Lang = Language.getString('instagram');
 const TLang = Language.getString('tiktok');
+const KLang = Language.getString('keys');
+const MLang = Language.getString('messages');
 
 
 if (Config.WORKTYPE == 'private') {
@@ -32,7 +27,7 @@ if (Config.WORKTYPE == 'private') {
 
         await message.sendMessage(infoMessage(Lang.loading))
 
-        await axios.get(`https://api.zeks.xyz/igstalk?apikey=${zeks}&username=${userName}`).then(async (response) => {
+        await axios.get(`https://api.zeks.xyz/igstalk?apikey=${KLang.KZ}&username=${userName}`).then(async (response) => {
             const { username, fullname, follower, following, profile_pic } = response.data
             const instascrap = await axios.get(profile_pic, { responseType: 'arraybuffer' })
             const msg = `*Nombre* ${fullname}\n*Usuario* ${username}\n*Seguidores* ${follower}\n*Siguiendo* ${following}`
@@ -42,6 +37,7 @@ if (Config.WORKTYPE == 'private') {
         })
     });
 
+    /*
     DrkBox.addCommand({ pattern: 'dtktk ?(.*)', fromMe: true, desc: TLang.DESC}, async (message, match) => {
 
         const videoLink = match[1]
@@ -52,11 +48,12 @@ if (Config.WORKTYPE == 'private') {
         await axios.get(`https://api.xteam.xyz/dl/tiktok?url=${videoLink}?lang=id-ID&is_copy_url=1&is_from_webapp=v1&APIKEY=${xteamkey}`).then(async (response) => {
             const {server_1 } = response.data
             const tktkscrap = await axios.get(server_1, { responseType: 'arraybuffer' })
-            await message.sendMessage(Buffer.from(tktkscrap.data), MessageType.video, { caption: `${made}` })
+            await message.sendMessage(Buffer.from(tktkscrap.data), MessageType.video, { caption: `${MLang.by}` })
         }).catch(async (err) => {
             await message.sendMessage(errorMessage(TLang.iErr))
         })
     });
+    */
 }
 else if (Config.WORKTYPE == 'public') {
 
@@ -77,6 +74,7 @@ else if (Config.WORKTYPE == 'public') {
         })
     });
 
+    /*
     DrkBox.addCommand({ pattern: 'dtktk ?(.*)', fromMe: false, desc: TLang.DESC}, async (message, match) => {
 
         const videoLink = match[1]
@@ -87,9 +85,10 @@ else if (Config.WORKTYPE == 'public') {
         await axios.get(`https://api.xteam.xyz/dl/tiktok?url=${videoLink}?lang=id-ID&is_copy_url=1&is_from_webapp=v1&APIKEY=${xteamkey}`).then(async (response) => {
             const {server_1 } = response.data
             const tktkscrap = await axios.get(server_1, { responseType: 'arraybuffer' })
-            await message.sendMessage(Buffer.from(tktkscrap.data), MessageType.video, { caption: `${made}` })
+            await message.sendMessage(Buffer.from(tktkscrap.data), MessageType.video, { caption: `${MLang.by}` })
         }).catch(async (err) => {
             await message.sendMessage(errorMessage(TLang.iErr))
         })
     });
+    */
 }

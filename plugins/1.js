@@ -20,12 +20,10 @@ key: {
 */
 
 /*
-//- json keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
-const  = up.;
-
-const made = up.by;
-`${made}`
+const Language = require('../language');
+const KLang = Language.getString('keys');
+const MLang = Language.getString('messages');
+`${MLang.by}`
 */
 
 /*

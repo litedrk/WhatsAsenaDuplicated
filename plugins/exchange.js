@@ -13,10 +13,7 @@ const fs = require('fs');
 
 const Language = require('../language');
 const Lang = Language.getString('exchange');
-
-//- json keys
-const up = require('./data/settings.json');
-const exchange = up.exchangeRate;
+const KLang = Language.getString('keys');
 
 if (cn.WORKTYPE == 'private') {
 
@@ -34,7 +31,7 @@ if (cn.WORKTYPE == 'private') {
 			await message.sendMessage(errorMessage(Lang.iErr))
 		}
 
-		await axios.get(`https://v6.exchangerate-api.com/v6/${exchange}/pair/${teskA}/${teskB}/${amount}`).then(async (response) => {
+		await axios.get(`https://v6.exchangerate-api.com/v6/${KLang.ER}/pair/${teskA}/${teskB}/${amount}`).then(async (response) => {
 			const {conversion_rate, conversion_result} = response.data
 			const msg = `*RESULTADO*\n\n*Precio ${teskA}:* ${conversion_rate} ${teskB}\n*${teskB}:* ${conversion_result}`
 			await message.sendMessage(msg)
@@ -58,7 +55,7 @@ else if (cn.WORKTYPE == 'public') {
 			await message.sendMessage(errorMessage(Lang.iErr))
 		}
 
-		await axios.get(`https://v6.exchangerate-api.com/v6/${exchange}/pair/${teskA}/${teskB}/${amount}`).then(async (response) => {
+		await axios.get(`https://v6.exchangerate-api.com/v6/${KLang.ER}/pair/${teskA}/${teskB}/${amount}`).then(async (response) => {
 			const {conversion_rate, conversion_result} = response.data
 			const msg = `*RESULTADO*\n\n*Precio ${teskA}:* ${conversion_rate} ${teskB}\n*${teskB}:* ${conversion_result}`
 			await message.sendMessage(msg)

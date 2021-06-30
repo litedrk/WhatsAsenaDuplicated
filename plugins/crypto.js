@@ -18,10 +18,7 @@ const fs = require("fs");
 
 const Language = require('../language');
 const Lang = Language.getString('crypto');
-
-//- json keys
-const up = require('./data/settings.json');
-const crypto = up.cryptoCompare;
+const KLang = Language.getString('keys');
 
 if (Config.WORKTYPE == 'private') {
 
@@ -29,7 +26,7 @@ if (Config.WORKTYPE == 'private') {
 		const userDrk = match[1]
 		if (userDrk === '') return await message.sendMessage(infoMessage(Lang.need))
 
-		await axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${userDrk}&tsyms=USD,COP&api_key={${crypto}}`).then(async (response) => {
+		await axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${userDrk}&tsyms=USD,COP&api_key={${KLang.CC}}`).then(async (response) => {
 			const {USD, COP} = response.data
 			const msg = `*Token:* ${userDrk}\n\n*USD:* ${USD}\n*COP:* ${COP}`
 			await message.sendMessage(msg)
@@ -44,7 +41,7 @@ else if (Config.WORKTYPE == 'public') {
 		const userDrk = match[1]
 		if (userDrk === '') return await message.sendMessage(infoMessage(Lang.need))
 
-		await axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${userDrk}&tsyms=USD,COP&api_key={${crypto}}`).then(async (response) => {
+		await axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${userDrk}&tsyms=USD,COP&api_key={${KLang.CC}}`).then(async (response) => {
 			const {USD, COP} = response.data
 			const msg = `*Token:* ${userDrk}\n\n*USD:* ${USD}\n*COP:* ${COP}`
 			await message.sendMessage(msg)
