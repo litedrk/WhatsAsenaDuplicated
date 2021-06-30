@@ -15,10 +15,6 @@ const Language = require('../language');
 const Lang = Language.getString('webss');
 const MLang = Language.getString('messages');
 
-
-const up = require('./data/settings.json');
-const made = up.by;
-
 if (Config.WORKTYPE == 'private') {
 
     DrkBox.addCommand({pattern: 'ss ?(.*)', fromMe: true, desc: Lang.desc_ss}, (async (message, match) => {
