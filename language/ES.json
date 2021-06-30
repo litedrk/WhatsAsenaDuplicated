@@ -515,6 +515,18 @@
         },
         "apk": {
             "DESC": "Menú de descarga de aplicaciones premium."
+        },
+        //keys & messages ===================================
+        "keys": {
+            "KLH": "f468d76b6668f12ad4d59443",
+            "KZ": "xMYCfgmBHH7dR6S87KJet1zUXa1",
+            "KM": "administrator",
+            "own": "573508770421",
+            "ER": "bcab649da87b8cc8e5f000d0",
+            "CC": "1be6e707f54766812254c65612a60298080cf7b26c2ef6ea9e6ea0b0b11b8890"
+        },
+        "messages": {
+            "by" : "Hecho por *DrkBot*"
         }
     }
 }
