@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="httsp://github.com/BotPrivateDrk/WhatsAsenaDuplicated">
+  <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated">
     <img src="https://img.shields.io/github/repo-size/BotPrivateDrk/WhatsAsenaDuplicated?color=purple&label=Peso%20Repositorio&style=plastic">
 
   </a>
