@@ -3,7 +3,7 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 DrkBot - Ian VanH
 */
-/*
+
 const DrkBot = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
@@ -16,7 +16,7 @@ const Language = require('../language');
 const Lang = Language.getString('conventer');
 
 //- json keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const made = up.by;
 
 if (Config.WORKTYPE == 'private') {
@@ -878,4 +878,3 @@ if (Config.WORKTYPE == 'private') {
     }));
 }
 else if (Config.WORKTYPE == 'public') {}
-*/
