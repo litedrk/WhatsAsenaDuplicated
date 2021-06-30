@@ -7,7 +7,7 @@
   <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated/fork">
     <img src="https://img.shields.io/github/forks/BotPrivateDrk/WhatsAsenaDuplicated?label=Fork&style=social">
   </a>
-  <a href="https://github.com/BotPrivateDrk/DrkBotPublic/stargazers">
+  <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated/stargazers">
     <img src="https://img.shields.io/github/stars/BotPrivateDrk/WhatsAsenaDuplicated?style=social">
   </a>
   <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated/commits/master">
@@ -39,29 +39,27 @@
 </p>
 
 ```
-Asena; Asena DrkBot son nombres que representan el software WhatsAsena, se pueden usar indistintamente en el resto del artículo.
+Asena; DrkBot son nombres que representan el software, se pueden usar indistintamente en el resto del artículo.||
 
-WhatsAsena - Asena DrkBot es un software de código abierto abierto al desarrollo.
+DrkBot es un software de código abierto abierto al desarrollo.
 El usuario es responsable de todas las consecuencias que pudieran derivarse de un uso incorrecto o indebido.
 Dado que es un proyecto de código abierto, cualquiera puede copiar el software, agregarlo y eliminarlo,
-y utilícelo de forma personalizada. Además, la compatibilidad con complementos permite a los usuarios
+y utilícelo de forma personalizada.
+Además, la compatibilidad con complementos permite a los usuarios
 instale sus propios complementos en el software original y utilícelos como desee.
-El uso es responsabilidad del usuario, Asena DrkBot es un
-infraestructura solamente. Así como el sistema operativo no es responsable
-por el trabajo realizado con los programas que se instalan posteriormente, WhatsAsena
+El uso es responsabilidad del usuario, así como el sistema operativo no es responsable
+por el trabajo realizado con los programas que se instalan posteriormente, DrkBot
 no es responsable del propósito y método de uso de los usuarios.
-Comercializar WhatsAsena por dinero, ponerlo a disposición o tener algún valor material
 
-WhatsAsena - Asena DrkBot is open source software open to development.
+DrkBot is open source software open to development.
 The user is responsible for all consequences that may arise from incorrect or improper use.
 Since it is an open source project, anyone can copy the software, add it and remove it,
-and use it in a personalized way. Additionally, plug-in support allows users to
+and use it in a personalized way.
+Additionally, plug-in support allows users to
 install your own plugins in the original software and use them as you like.
-The use is the responsibility of the user, Asena DrkBot is a
-infrastructure only. Just as the operating system is not responsible
-for the work done with the programs that are installed later, WhatsAsena
+The use is the responsibility of the user, just as the operating system is not responsible
+for the work done with the programs that are installed later, DrkBot
 is not responsible for the purpose and method of use of users.
-Market WhatsAsena for money, make it available or have some material value
 ```
 
 <div align="center">
@@ -125,7 +123,7 @@ Modifier, Translator, Bug Fixes |
 - [@adiwajshing](https://github.com/adiwajshing) for coded [Baileys](https://github.com/adiwajshing/Baileys)
 
 ## License
-This project is protected by `GNU General Public Licence v3.0` license.
+This project is protected by `GNU General Public Licence v3.0`
 
 ### Disclaimer
 `WhatsApp` name, its variations and the logo are registered trademarks of Facebook. We have nothing to do with the registered trademark
