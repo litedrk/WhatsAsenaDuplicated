@@ -30,7 +30,7 @@ if (Config.WORKTYPE == 'private') {
         await axios.get(`https://api.zeks.xyz/api/igstalk?apikey=${KLang.KZ}&username=${userName}`).then(async (response) => {
             const { username, fullname, follower, following, profile_pic } = response.data
             const instascrap = await axios.get(profile_pic, { responseType: 'arraybuffer' })
-            const msg = `*Nombre* ${fullname}\n*Usuario* ${username}\n*Seguidores* ${follower}\n*Siguiendo* ${following}`
+            const msg = `*Nombre:* ${fullname}\n*Usuario:* ${username}\n*Seguidores:* ${follower}\n*Siguiendo:* ${following}`
             await message.sendMessage(Buffer.from(instascrap.data), MessageType.image, { caption: msg })
         }).catch(async (err) => {
             await message.sendMessage(errorMessage(Lang.iErr))
