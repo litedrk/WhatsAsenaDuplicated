@@ -7,7 +7,7 @@
   <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated/fork">
     <img src="https://img.shields.io/github/forks/BotPrivateDrk/WhatsAsenaDuplicated?label=Fork&style=social">
   </a>
-  <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated/stargazers">
+  <a href="https://github.com/BotPrivateDrk/DrkBotPublic/stargazers">
     <img src="https://img.shields.io/github/stars/BotPrivateDrk/WhatsAsenaDuplicated?style=social">
   </a>
   <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated/commits/master">
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/BotPrivateDrk/WhatsAsenaDuplicated">
+  <a href="httsp://github.com/BotPrivateDrk/WhatsAsenaDuplicated">
     <img src="https://img.shields.io/github/repo-size/BotPrivateDrk/WhatsAsenaDuplicated?color=purple&label=Peso%20Repositorio&style=plastic">
 
   </a>
@@ -67,7 +67,7 @@ is not responsible for the purpose and method of use of users.
   <h1>☢️ DrkBot ☢️</h1>
 </div>
 <p align="center">
-    WhatsAsena project - Hace que usar WhatsApp sea fácil y divertido.
+    DrkBot project - Hace que usar WhatsApp sea fácil y divertido.
     <br>
         <a href="https://t.me/Dark1522">Telegram Channel</a> |
         <a href="http://wa.me/573046793853?text=!alive">BOT WhatsApp</a> |
@@ -123,7 +123,7 @@ Modifier, Translator, Bug Fixes |
 - [@adiwajshing](https://github.com/adiwajshing) for coded [Baileys](https://github.com/adiwajshing/Baileys)
 
 ## License
-This project is protected by `GNU General Public Licence v3.0`
+This project is protected by `GNU General Public Licence v3.0` license.
 
 ### Disclaimer
 `WhatsApp` name, its variations and the logo are registered trademarks of Facebook. We have nothing to do with the registered trademark
