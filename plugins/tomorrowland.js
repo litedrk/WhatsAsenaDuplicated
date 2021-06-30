@@ -59,7 +59,7 @@ if (Config.LANG == 'ES') {
     AUT = 'Propietario de la canción:'
     SLY = 'LETRA:'
     NEED_WORDS = 'Que deseas buscar?'
-    GETTING_VIDEOS =: '*Tomorrowland BOT está buscando tus videos*'
+    GETTING_VIDEOS = '*Tomorrowland BOT está buscando tus videos*'
     mp4toaudioreply = '*Tienes que responder a un video*'
     mp4toaudioresp = '```Covirtiendo video en audio...```'
 }
