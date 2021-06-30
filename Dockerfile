@@ -2,7 +2,7 @@ FROM fusuf/whatsasena:latest
 
 RUN git clone https://github.com/BotPrivateDrk/WhatsAsenaDuplicated /root/WhatsAsenaDuplicated
 WORKDIR /root/WhatsAsenaDuplicated/
-ENV ES=America/Barranquilla
+ENV ES=America/New_York
 RUN npm install supervisor -g
 RUN npm install
 
