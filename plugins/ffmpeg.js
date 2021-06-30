@@ -16,7 +16,7 @@ const Language = require('../language');
 const Lang = Language.getString('ffmpeg');
 
 //- json keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const made = up.by;
 
 if (Config.WORKTYPE == 'private') {

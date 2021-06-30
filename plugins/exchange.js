@@ -15,7 +15,7 @@ const Language = require('../language');
 const Lang = Language.getString('exchange');
 
 //- json keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const exchange = up.exchangeRate;
 
 if (cn.WORKTYPE == 'private') {

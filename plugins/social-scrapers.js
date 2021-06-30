@@ -12,7 +12,7 @@ const axios = require('axios');
 const fs = require('fs');
 
 //- json & keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const melodickey = up.Keymelodic;
 const xteamkey = up.Keyxteam;
 const made = up.by;

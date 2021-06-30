@@ -11,7 +11,7 @@ const axios = require('axios');
 const Config = require('../config');
 
 //- json bot & setting
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const zekskey = up.Keyzeks;
 
 const Language = require('../language');

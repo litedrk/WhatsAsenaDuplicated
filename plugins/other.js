@@ -12,7 +12,7 @@ const Config = require('../config');
 const fs = require('fs');
 
 //- json keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const melodic = up.Keymelodic;
 const made = up.by;
 

@@ -11,7 +11,7 @@ const { errorMessage, infoMessage } = require('../helpers');
 const Config = require('../config');
 
 //- json keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const made = up.by;
 
 const H_DESC = "Menú de descarga de imagenes anime."
