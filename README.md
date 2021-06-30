@@ -39,7 +39,7 @@
 </p>
 
 ```
-Asena; DrkBot son nombres que representan el software, se pueden usar indistintamente en el resto del artículo.||
+DrkBot;Asena son nombres que representan el software, se pueden usar indistintamente en el resto del artículo.||
 
 DrkBot es un software de código abierto abierto al desarrollo.
 El usuario es responsable de todas las consecuencias que pudieran derivarse de un uso incorrecto o indebido.
