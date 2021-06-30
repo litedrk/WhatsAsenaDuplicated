@@ -16,8 +16,8 @@ const MLang = Language.getString('messages');
 const KLang = Language.getString('keys');
 
 
-if (CON.LANG == 'ES') imUrl = '!Necesito una url de una imagen¡'
-if (CON.LANG == 'EN') imUrl = '!I need the url of an image¡'
+if (Config.LANG == 'ES') imUrl = '!Necesito una url de una imagen¡'
+if (Config.LANG == 'EN') imUrl = '!I need the url of an image¡'
 
 if (Config.WORKTYPE == 'private') {
 
