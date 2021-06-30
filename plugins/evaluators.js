@@ -16,7 +16,7 @@ const SLang = Language.getString('conventer');
 const NLang = Language.getString('scrapers');
 
 //- json keys
-const up = JSON.parse(fs.readFileSync('./data/settings.json'));
+const up = require('./data/settings.json');
 const made = up.by;
 
 const googleTTS = require('google-translate-tts');
