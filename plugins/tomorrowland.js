@@ -67,20 +67,7 @@ if (Config.LANG == 'ES') {
 if (Config.WORKTYPE == 'private') {
 
 	// Bot Tomorrownald
-    DrkBox.addCommand({ pattern: '2song ?(.*)', fromMe: true}, async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid, expSong, MessageType.text);
-        var reply = await message.client.sendMessage(message.jid, searchSong, MessageType.text);
-        await axios.get(`https://api.zeks.xyz/api/ytplaymp3/2?apikey=xMYCfgmBHH7dR6S87KJet1zUXa1&q=${match[1]}`).then(async (response) => {
-            const {link} = response.data.result
-            const msg = `${link}`
-            reply = await message.client.sendMessage(message.jid, downSong, MessageType.text);
-            await message.client.sendMessage(message.jid, Buffer.from(msg.arrayBuffer), MessageType.audio, {mimetype: Mimetype.mp4Audio});
-        }).catch(async (err) => {
-            await message.sendMessage(message.jid, iErr, MessageType.text)
-          })
-    });
-
-    DrkBox.addCommand({pattern: '3song ?(.*)', fromMe: true}, (async (message, match) => {
+    DrkBox.addCommand({pattern: 'song ?(.*)', fromMe: false}, (async (message, match) => {
         if (match[1] === '') return await message.client.sendMessage(message.jid, expSong, MessageType.text);
         let arama = await yts(match[1]);
         arama = arama.all;
@@ -112,20 +99,7 @@ if (Config.WORKTYPE == 'private') {
             });
     }));
 
-    DrkBox.addCommand({ pattern: '2video ?(.*)', fromMe: true}, async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid, expVid, MessageType.text);
-        var reply = await message.client.sendMessage(message.jid, searchVid, MessageType.text);
-        await axios.get(`https://api.zeks.xyz/api/ytmp4/2?apikey=xMYCfgmBHH7dR6S87KJet1zUXa1&url=${match[1]}`).then(async (response) => {
-            const {link} = response.data.result
-            const msg = `${link}`
-            reply = await message.client.sendMessage(message.jid, downVid, MessageType.text);
-            await message.client.sendMessage(message.jid, Buffer.from(msg.arrayBuffer), MessageType.video, {mimetype: Mimetype.mp4});
-        }).catch(async (err) => {
-            await message.sendMessage(message.jid, iErr, MessageType.text)
-          })
-    });
-
-    DrkBox.addCommand({pattern: '3video ?(.*)', fromMe: true}, (async (message, match) => {
+    DrkBox.addCommand({pattern: 'video ?(.*)', fromMe: false}, (async (message, match) => {
         if (match[1] === '') return await message.client.sendMessage(message.jid, expVid, MessageType.text);
     
         var VID = '';
@@ -151,7 +125,7 @@ if (Config.WORKTYPE == 'private') {
         });
     }));
 
-    DrkBox.addCommand({pattern: '2lyric ?(.*)', fromMe: true}, (async (message, match) => {
+    DrkBox.addCommand({pattern: 'lyric ?(.*)', fromMe: false}, (async (message, match) => {
         if (match[1] === '') return await message.client.sendMessage(message.jid,  NEED, MessageType.text);
 
         var aut = await solenolyrics.requestLyricsFor(`${match[1]}`); 
@@ -163,7 +137,7 @@ if (Config.WORKTYPE == 'private') {
         await message.client.sendMessage(message.jid, Buffer.from(buffer.data),  MessageType.image, {caption: `*${ ARAT}* ` + '```' + `${match[1]}` + '```' + `\n*${ BUL}* ` + '```' + tit + '```' + `\n*${ AUT}* ` + '```' + son + '```' + `\n\n*${ SLY}*\n` + aut });
     }));
 
-    DrkBox.addCommand({pattern: '2yt ?(.*)', fromMe: true}, (async (message, match) => {
+    DrkBox.addCommand({pattern: 'yt ?(.*)', fromMe: false}, (async (message, match) => {
         if (match[1] === '') return await message.client.sendMessage(message.jid, NEED_WORDS, MessageType.text);
         var reply = await message.client.sendMessage(message.jid, GETTING_VIDEOS, MessageType.text);
 
@@ -181,7 +155,7 @@ if (Config.WORKTYPE == 'private') {
         await message.client.sendMessage(message.jid, mesaj, MessageType.text);
     }));
 
-    DrkBox.addCommand({pattern: '2mp4audio', fromMe: true}, (async (message, match) => {
+    DrkBox.addCommand({pattern: 'mp4audio', fromMe: false}, (async (message, match) => {
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,  mp4toaudioreply, MessageType.text);
         var downloading = await message.client.sendMessage(message.jid, mp4toaudioresp, MessageType.text);
         var location = await message.client.downloadAndSaveMediaMessage({
@@ -202,139 +176,4 @@ if (Config.WORKTYPE == 'private') {
     }));
 }
 else if (Config.WORKTYPE == 'public') {
-
-    // Bot Tomorrownald
-    DrkBox.addCommand({ pattern: '2song ?(.*)', fromMe: false}, async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid, expSong, MessageType.text);
-        var reply = await message.client.sendMessage(message.jid, searchSong, MessageType.text);
-        await axios.get(`https://api.zeks.xyz/api/ytplaymp3/2?apikey=xMYCfgmBHH7dR6S87KJet1zUXa1&q=${match[1]}`).then(async (response) => {
-            const {link} = response.data.result
-            const msg = `${link}`
-            reply = await message.client.sendMessage(message.jid, downSong, MessageType.text);
-            await message.client.sendMessage(message.jid, Buffer.from(msg.arrayBuffer), MessageType.audio, {mimetype: Mimetype.mp4Audio});
-        }).catch(async (err) => {
-            await message.sendMessage(message.jid, iErr, MessageType.text)
-          })
-    });
-
-    DrkBox.addCommand({pattern: '3song ?(.*)', fromMe: false}, (async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid, expSong, MessageType.text);
-        let arama = await yts(match[1]);
-        arama = arama.all;
-        if(arama.length < 1) return await message.client.sendMessage(message.jid, iErr, MessageType.text);
-        var reply = await message.client.sendMessage(message.jid, searchSong, MessageType.text);
-
-        let title = arama[0].title.replace(' ', '+');
-        let stream = ytdl(arama[0].videoId, {
-            quality: 'highestaudio',
-        });
-    
-        got.stream(arama[0].image).pipe(fs.createWriteStream(title + '.jpg'));
-        ffmpeg(stream)
-            .audioBitrate(320)
-            .save('./' + title + '.mp3')
-            .on('end', async () => {
-                const writer = new ID3Writer(fs.readFileSync('./' + title + '.mp3'));
-                writer.setFrame('TIT2', arama[0].title)
-                    .setFrame('TPE1', [arama[0].author.name])
-                    .setFrame('APIC', {
-                        type: 3,
-                        data: fs.readFileSync(title + '.jpg'),
-                        description: arama[0].description
-                    });
-                writer.addTag();
-
-                reply = await message.client.sendMessage(message.jid, downSong, MessageType.text);
-                await message.client.sendMessage(message.jid,Buffer.from(writer.arrayBuffer), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
-            });
-    }));
-
-    DrkBox.addCommand({ pattern: '2video ?(.*)', fromMe: false}, async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid, expVid, MessageType.text);
-        var reply = await message.client.sendMessage(message.jid, searchVid, MessageType.text);
-        await axios.get(`https://api.zeks.xyz/api/ytmp4/2?apikey=xMYCfgmBHH7dR6S87KJet1zUXa1&url=${match[1]}`).then(async (response) => {
-            const {link} = response.data.result
-            const msg = `${link}`
-            reply = await message.client.sendMessage(message.jid, downVid, MessageType.text);
-            await message.client.sendMessage(message.jid, Buffer.from(msg.arrayBuffer), MessageType.video, {mimetype: Mimetype.mp4});
-        }).catch(async (err) => {
-            await message.sendMessage(message.jid, iErr, MessageType.text)
-          })
-    });
-
-    DrkBox.addCommand({pattern: '3video ?(.*)', fromMe: false}, (async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid, expVid, MessageType.text);
-    
-        var VID = '';
-        try {
-            if (match[1].includes('watch')) {
-                var tsts = match[1].replace('watch?v=', '')
-                var alal = tsts.split('/')[3]
-                VID = alal
-            } else {
-                VID = match[1].split('/')[3]
-            }
-        } catch {
-            return await message.client.sendMessage(message.jid, iErr, MessageType.text);
-        }
-        var reply = await message.client.sendMessage(message.jid, searchVid, MessageType.text);
-
-        var yt = ytdl(VID, {filter: format => format.container === 'mp4' && ['720p', '480p', '360p', '240p', '144p'].map(() => true)});
-        yt.pipe(fs.createWriteStream('./' + VID + '.mp4'));
-
-        yt.on('end', async () => {
-            reply = await message.client.sendMessage(message.jid, downVid, MessageType.text);
-            await message.client.sendMessage(message.jid,fs.readFileSync('./' + VID + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4});
-        });
-    }));
-
-    DrkBox.addCommand({pattern: '2lyric ?(.*)', fromMe: false}, (async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid,  NEED, MessageType.text);
-
-        var aut = await solenolyrics.requestLyricsFor(`${match[1]}`); 
-        var son = await solenolyrics.requestAuthorFor(`${match[1]}`);
-        var cov = await solenolyrics.requestIconFor(`${match[1]}`);
-        var tit = await solenolyrics.requestTitleFor(`${match[1]}`);
-
-        var buffer = await axios.get(cov, {responseType: 'arraybuffer'});
-        await message.client.sendMessage(message.jid, Buffer.from(buffer.data),  MessageType.image, {caption: `*${ ARAT}* ` + '```' + `${match[1]}` + '```' + `\n*${ BUL}* ` + '```' + tit + '```' + `\n*${ AUT}* ` + '```' + son + '```' + `\n\n*${ SLY}*\n` + aut });
-    }));
-
-    DrkBox.addCommand({pattern: '2yt ?(.*)', fromMe: false}, (async (message, match) => {
-        if (match[1] === '') return await message.client.sendMessage(message.jid, NEED_WORDS, MessageType.text);
-        var reply = await message.client.sendMessage(message.jid, GETTING_VIDEOS, MessageType.text);
-
-        try {
-            var arama = await yts(match[1]);
-        } catch {
-            return await message.client.sendMessage(message.jid, iErr, MessageType.text);
-        }
-    
-        var mesaj = '';
-        arama.all.map((video) => {
-            mesaj += '*' + video.title + '* - ' + video.url + '\n'
-        });
-
-        await message.client.sendMessage(message.jid, mesaj, MessageType.text);
-    }));
-
-    DrkBox.addCommand({pattern: '2mp4audio', fromMe: false}, (async (message, match) => {
-        if (message.reply_message === false) return await message.client.sendMessage(message.jid,  mp4toaudioreply, MessageType.text);
-        var downloading = await message.client.sendMessage(message.jid, mp4toaudioresp, MessageType.text);
-        var location = await message.client.downloadAndSaveMediaMessage({
-            key: {
-                remoteJid: message.reply_message.jid,
-                id: message.reply_message.id
-            },
-            message: message.reply_message.data.quotedMessage
-        });
-
-        ffmpeg(location)
-            .withNoVideo()
-            .save('output.mp3')
-            .on('end', async () => {
-                await message.client.sendMessage(message.jid, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
-            });
-        return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
-    }));
 }
