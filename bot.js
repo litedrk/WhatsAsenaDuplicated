@@ -84,12 +84,12 @@ async function whatsAsena () {
         await axios.get('https://gist.githubusercontent.com/BotPrivateDrk/3afc35e5f4953e05289acbedbe69bab3/raw/').then(async (ann) => {
             const { infoes, infoen } = ann.data.announcements
             if (infoes !== '' && config.LANG == 'ES') {
-                while (getGMTh == 5 && getGMTm == 43) {
+                while (getGMTh == 6 && getGMTm == 58) {
                     return conn.sendMessage(conn.user.jid, '[ ```Anuncios Diarios``` ]\n\n' + infoes.replace('{user}', conn.user.name).replace('{wa_version}', conn.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', conn.user.phone.os_version).replace('{device_model}', conn.user.phone.device_model).replace('{device_brand}', conn.user.phone.device_manufacturer), MessageType.text) 
                 }
             }
             else if (infoen !== '' && config.LANG == 'EN') {
-                while (getGMTh == 5 && getGMTm == 43) {
+                while (getGMTh == 6 && getGMTm == 58) {
                     return conn.sendMessage(conn.user.jid, '[ ```Daily Announcements``` ]\n\n' + infoen.replace('{user}', conn.user.name).replace('{wa_version}', conn.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', conn.user.phone.os_version).replace('{device_model}', conn.user.phone.device_model).replace('{device_brand}', conn.user.phone.device_manufacturer), MessageType.text) 
                 }
             }
