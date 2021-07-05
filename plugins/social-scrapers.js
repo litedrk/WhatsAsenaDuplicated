@@ -55,4 +55,22 @@ if (Config.WORKTYPE == 'private') {
     });
     */
 }
-else if (Config.WORKTYPE == 'public') {}
+else if (Config.WORKTYPE == 'public') {
+    
+    DrkBox.addCommand({ pattern: 'insta ?(.*)', fromMe: false, desc: Lang.DESC}, async (message, match) => {
+
+        const userName = match[1]
+        if (userName === '') return await message.sendMessage(errorMessage(Lang.need))
+
+        await message.sendMessage(infoMessage(Lang.loading))
+
+        await axios.get(`https://api.zeks.xyz/api/igstalk?apikey=${KLang.KZ}&username=${userName}`).then(async (response) => {
+            const { username, fullname, follower, following, profile_pic } = response.data
+            const instascrap = await axios.get(profile_pic, { responseType: 'arraybuffer' })
+            const msg = `*Nombre:* ${fullname}\n*Usuario:* ${username}\n*Seguidores:* ${follower}\n*Siguiendo:* ${following}`
+            await message.sendMessage(Buffer.from(instascrap.data), MessageType.image, { caption: msg })
+        }).catch(async (err) => {
+            await message.sendMessage(errorMessage(Lang.iErr))
+        })
+    });
+}
