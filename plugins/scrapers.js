@@ -646,7 +646,7 @@ else if (config.WORKTYPE == 'public') {
         succ_on = 'Antilink Berhasil Dibuka!'
         succ_off = 'Antilink Berhasil Ditutup!'
     }
-    DrkBot.addCommand({pattern: 'antilink ?(.*)', fromMe: false, desc: l_dsc, usage: '.antilink on / off' }, (async (message, match) => {
+    DrkBot.addCommand({pattern: 'antilink ?(.*)', fromMe: true, desc: l_dsc, usage: '.antilink on / off' }, (async (message, match) => {
         const anti_status = `${config.ANTİLİNK}`
         if (match[1] == 'on') {
             if (anti_status == 'true') {
@@ -772,7 +772,7 @@ else if (config.WORKTYPE == 'public') {
             }
         }
     }));
-    DrkBot.addCommand({pattern: 'detectlang$', fromMe: false, desc: dlang_dsc}, (async (message, match) => {
+    DrkBot.addCommand({pattern: 'detectlang$', fromMe: true, desc: dlang_dsc}, (async (message, match) => {
 
         if (!message.reply_message) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text)
         const msg = message.reply_message.text
