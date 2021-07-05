@@ -183,21 +183,8 @@ if (Config.WORKTYPE == 'private') {
 }));
     
     DrkBox.addCommand({pattern: 'upgrade', fromMe: true}, (async (message, match) => {
-        await message.sendMessage(`
-┏━━━━━━━━━━\n
-┃〘 ☢️ *𝐃𝐫𝐤𝐁𝐨𝐭* ☢️ 〙\n
-┣━━━━━━━━━━\n
-┠ NUEVA ACTUALIZACIÓN\n
-┠⊷️ *Version:*  ```'+Config.VERSION+'```\n
-┠⊷️ *Prefix:*  『/』\n
-┃\n
-┠⊷️ *UPDATE*\n
-┠  *ip*\n
-┠  *ocr*\n
-┠  *scan*\n
-┠  *wame*\n
-┗━━━━━━━━━━━━`);
-}));
+        await message.sendMessage('┏━━━━━━━━━━\n┃〘 ☢️ *𝐃𝐫𝐤𝐁𝐨𝐭* ☢️ 〙\n┣━━━━━━━━━━\n┠ NUEVA ACTUALIZACIÓN\n┠⊷️ *Version:*  ```'+Config.VERSION+'```\n┠⊷️ *Prefix:*  『/』\n┃\n┠⊷️ *CAMBIOS*\n┠  *ip*\n┠  *ocr*\n┠  *scan*\n┠  *wame*\n┗━━━━━━━━━━━━');
+    }));
 
     DrkBox.addCommand({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC}, (async (message, match) => {
         const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
@@ -373,20 +360,8 @@ else if (Config.WORKTYPE == 'public') {
 ┗━━━━━━━━━━━━━━━━━━━\n`);
 }));
     
+    
     DrkBox.addCommand({pattern: 'upgrade', fromMe: false}, (async (message, match) => {
-        await message.sendMessage(`
-┏━━━━━━━━━━\n
-┃〘 ☢️ *𝐃𝐫𝐤𝐁𝐨𝐭* ☢️ 〙\n
-┣━━━━━━━━━━\n
-┠ NUEVA ACTUALIZACIÓN\n
-┠⊷️ *Version:*  ```'+Config.VERSION+'```\n
-┠⊷️ *Prefix:*  『/』\n
-┃\n
-┠⊷️ *UPDATE*\n
-┠  *ip*\n
-┠  *ocr*\n
-┠  *scan*\n
-┠  *wame*\n
-┗━━━━━━━━━━━━`);
-}));
+        await message.sendMessage('┏━━━━━━━━━━\n┃〘 ☢️ *𝐃𝐫𝐤𝐁𝐨𝐭* ☢️ 〙\n┣━━━━━━━━━━\n┠ NUEVA ACTUALIZACIÓN\n┠⊷️ *Version:*  ```'+Config.VERSION+'```\n┠⊷️ *Prefix:*  『/』\n┃\n┠⊷️ *CAMBIOS*\n┠  *ip*\n┠  *ocr*\n┠  *scan*\n┠  *wame*\n┗━━━━━━━━━━━━');
+    }));
 }
