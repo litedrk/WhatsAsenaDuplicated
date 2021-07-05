@@ -57,8 +57,8 @@ if (Config.WORKTYPE == 'private') {
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)
 			 }
-    }
-  }));
+    	}
+	}));
 	
 	DrkBox.addCommand({pattern: "nsfw ?(.*)", fromMe: true, desc: H_DESC}, (async (message, match) => {
 		if (match[1] === "") {
@@ -89,12 +89,12 @@ if (Config.WORKTYPE == 'private') {
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)
 			 }
-    }
-  }));
+		}
+	}));
 }
 
 else if (Config.WORKTYPE == 'public') {
-
+	
 DrkBox.addCommand({pattern: 'infoanime', fromMe: false, desc: H_DESC}, (async (message, match) => {
 		await message.sendMessage('🔞 *TODO ANIME* 🔞\n\n➡️ /sfw\n\n➡️ /nsfw');
 	}));
@@ -133,8 +133,8 @@ DrkBox.addCommand({pattern: 'infoanime', fromMe: false, desc: H_DESC}, (async (m
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)
 			 }
-    }
-  }));
+    	}
+	}));
 	
 	DrkBox.addCommand({pattern: "nsfw ?(.*)", fromMe: false, desc: H_DESC}, (async (message, match) => {
 		if (match[1] === "") {
@@ -165,6 +165,6 @@ DrkBox.addCommand({pattern: 'infoanime', fromMe: false, desc: H_DESC}, (async (m
 			}catch (err) {
 				await message.reply(`*Error:*\n${Ierr}`, MessageType.text)
 			 }
-    }
-  }));
+		}
+	}));
 }
