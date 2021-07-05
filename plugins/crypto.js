@@ -6,7 +6,6 @@ DrkBot - Ian VanH
 
 /*
 https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd
-https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&api_key={1be6e707f54766812254c65612a60298080cf7b26c2ef6ea9e6ea0b0b11b8890}
 */
 
 const DrkBox = require("../events");
