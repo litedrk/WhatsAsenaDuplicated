@@ -144,7 +144,7 @@
             "NEED_REPLY": "*¡Responda a una foto!*",
             "DOWNLOADING": "```Analizando la imagen y escribiendo el texto...```",
             "ERROR": "```No pude leer esto:/```\n*Error:*```{}```",
-            "RESULT": "*Lenguaje:* ```{}```\n*Esto es lo que leí:* ```{}```"
+            "RESULT": "*Lenguaje:* ```{}```\n*Esto es lo que leí:*\n ```{}```"
         },
         "profile": {
             "KICKME_DESC": "Este comando te expulsa del grupo que escribiste.",
