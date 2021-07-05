@@ -1,7 +1,5 @@
 const DrkBox = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
-const config = require('../config');
-
 const Config = require('../config');
 const ffmpeg = require('fluent-ffmpeg');
 
@@ -17,7 +15,7 @@ var axios = require("axios");
 var fs = require('fs');
 
 
-if (config.WORKTYPE == 'private') {
+if (Config.WORKTYPE == 'private') {
 
     DrkBox.addCommand({pattern: 'recona', fromMe: true}, (async (message, match) => {
 
@@ -74,4 +72,4 @@ if (config.WORKTYPE == 'private') {
 
 }
 
-else if (config.WORKTYPE == 'public') {}
+else if (Config.WORKTYPE == 'public') {}
