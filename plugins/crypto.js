@@ -48,4 +48,19 @@ else if (Config.WORKTYPE == 'public') {
 			await message.sendMessage(errorMessage(Lang.iErr))
 		   })
 	});
+
+// duplicado =============================
+	DrkBox.addCommand({ pattern: 'price ?(.*)', fromMe: true, desc: Lang.DESC}, async (message, match) => {
+		const userDrk = match[1]
+		if (userDrk === '') return await message.sendMessage(infoMessage(Lang.need))
+
+		await axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${userDrk}&tsyms=USD,COP&api_key={${KLang.CC}}`).then(async (response) => {
+			const {USD, COP} = response.data
+			const msg = `*Token:* ${userDrk}\n\n*USD:* ${USD}\n*COP:* ${COP}`
+			await message.sendMessage(msg)
+		}).catch(async (err) => {
+			await message.sendMessage(errorMessage(Lang.iErr))
+		   })
+	});
+// fin duplicado =============================
 }

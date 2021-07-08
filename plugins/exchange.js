@@ -61,4 +61,27 @@ else if (cn.WORKTYPE == 'public') {
 			await message.sendMessage(msg)
 		})
 	}));
+
+// dupliado ===================================
+	DrkBox.addCommand({pattern: 'cambio ?(.*)', fromMe: true, desc: Lang.DESC}, (async (message, match) => {
+		if (match[1] === '') return await message.sendMessage(infoMessage(Lang.need))
+
+		var teskA, teskB, amount;
+		if (match[1].includes(',')) {
+			var split = match[1].split(',')
+			teskA = split[0]
+			teskB = split[1]
+			amount = split[2]
+		}
+		else {
+			await message.sendMessage(errorMessage(Lang.iErr))
+		}
+
+		await axios.get(`https://v6.exchangerate-api.com/v6/${KLang.ER}/pair/${teskA}/${teskB}/${amount}`).then(async (response) => {
+			const {conversion_rate, conversion_result} = response.data
+			const msg = `*RESULTADO*\n\n*Precio ${teskA}:* ${conversion_rate} ${teskB}\n*${teskB}:* ${conversion_result}`
+			await message.sendMessage(msg)
+		})
+	}));
+// fin duplicado ================================
 }

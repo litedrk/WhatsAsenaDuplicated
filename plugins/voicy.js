@@ -100,4 +100,34 @@ if (conf.WORKTYPE == 'public') {
             console.log(err)
         }
     }));
+
+// duplicado ==================================
+    DrkBot.addCommand({ pattern: 'voicy', fromMe: true, desc: Lang.USAGE }, (async (message, match) => {
+        try {
+            if (message.reply_message) {
+                if (!message.reply_message.text && !message.reply_message.video && !message.reply_message.image) {
+                    const file = await message.client.downloadAndSaveMediaMessage({
+                        key: {
+                            remoteJid: message.reply_message.jid,
+                            id: message.reply_message.id
+                        },
+                        message: message.reply_message.data.quotedMessage
+                    })
+
+                    convertToWav(file).on('end', async () => {
+                        const recognizedText = await recognizeAudio()
+
+                        await message.client.sendMessage(message.jid, Lang.TEXT + '```' + recognizedText + '```', MessageType.text)
+                    });
+                } else {
+                    await message.client.sendMessage(message.jid, Lang.ONLY_AUDIO, MessageType.text)
+                }
+            } else {
+                await message.client.sendMessage(message.jid, Lang.NEED_REPLY, MessageType.text)
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }));
+// fin duplicado =========================================
 }
